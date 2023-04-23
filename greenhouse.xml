@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<greenhouse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="greenhouse.xsd">
+    <plant>
+        <name>Plant1</name>
+        <soil>Black soil</soil>
+        <origin>Ukraine</origin>
+        <visual_parameters>
+            <stem_color>Brown</stem_color>
+            <leafs_color>Light green</leafs_color>
+            <medium_size unit="meter">2</medium_size>
+        </visual_parameters>
+        <growing_tips>
+            <temperature unit="celsius">15</temperature>
+            <lighting>Light-loving</lighting>
+            <watering unit="ml/week">600</watering>
+        </growing_tips>
+    </plant>
+    <plant>
+        <name>Plant2</name>
+        <soil>Black soil</soil>
+        <origin>America</origin>
+        <visual_parameters>
+            <stem_color>Brown</stem_color>
+            <leafs_color>Dark green</leafs_color>
+            <medium_size unit="meter">3</medium_size>
+        </visual_parameters>
+        <growing_tips>
+            <temperature unit="celsius">25</temperature>
+            <lighting>Not light-loving</lighting>
+            <watering unit="ml/week">500</watering>
+        </growing_tips>
+    </plant>
+    <plant>
+        <name>Plant3</name>
+        <soil>Red soil</soil>
+        <origin>Uganda</origin>
+        <visual_parameters>
+            <stem_color>Red</stem_color>
+            <leafs_color>Rose</leafs_color>
+            <medium_size unit="meter">1</medium_size>
+        </visual_parameters>
+        <growing_tips>
+            <temperature unit="celsius">30</temperature>
+            <lighting>Light-loving</lighting>
+            <watering unit="ml/week">500</watering>
+        </growing_tips>
+    </plant>
+</greenhouse>

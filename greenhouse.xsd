@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="greenhouse" type="greenhouseType"/>
+
+  <xs:complexType name="medium_sizeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attribute type="xs:string" name="unit" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="visual_parametersType">
+    <xs:sequence>
+      <xs:element name="stem_color" type="xs:string" />
+      <xs:element name="leafs_color" type="xs:string"/>
+      <xs:element name="medium_size" type="medium_sizeType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="temperatureType">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attribute type="xs:string" name="unit" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="wateringType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="unit" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="growing_tipsType">
+    <xs:sequence>
+      <xs:element name="temperature" type="temperatureType"/>
+
+      <xs:element name="lighting">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Light-loving"/>
+            <xs:enumeration value="Not light-loving"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="watering" type="wateringType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="plantType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="soil" type="xs:string"/>
+      <xs:element name="origin" type="xs:string"/>
+      <xs:element type="visual_parametersType" name="visual_parameters"/>
+      <xs:element type="growing_tipsType" name="growing_tips"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="greenhouseType">
+    <xs:sequence>
+      <xs:element type="plantType" name="plant" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
